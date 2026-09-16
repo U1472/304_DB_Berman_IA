@@ -1,0 +1,67 @@
+3.53.4 2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc (64-bit) 
+
+USAGE: .mode [MODE] [OPTIONS]
+
+Change the output mode to MODE and/or apply OPTIONS to the output mode.
+Arguments are processed from left to right.  If no arguments, show the
+current output mode and relevant options.
+
+Options:
+  --align STRING           Set the alignment of text in columnar modes
+                           String consists of characters 'L', 'C', 'R'
+                           meaning "left", "centered", and "right", with
+                           one letter per column starting from the left.
+                           Unspecified alignment defaults to 'L'.
+  --blob-quote ARG         ARG can be "auto", "text", "sql", "hex", "tcl",
+                           "json", or "size".  Default is "auto".
+  --border on|off          Show outer border on "box" and "table" modes.
+  --charlimit N            Set the maximum number of output characters to
+                           show for any single SQL value to N. Longer values
+                           truncated. Zero means "no limit".
+  --colsep STRING          Use STRING as the column separator
+  --escape ESC             Enable/disable escaping of control characters
+                           found in the output. ESC can be "off", "ascii",
+                           or "symbol".
+  --linelimit N            Set the maximum number of output lines to show for
+                           any single SQL value to N. Longer values are
+                           truncated. Zero means "no limit". Only works
+                           in "line" mode and in columnar modes.
+  --limits L,C,T           Shorthand for "--linelimit L --charlimit C
+                           --titlelimit T". The ",T" can be omitted in which
+                           case the --titlelimit is unchanged.  The argument
+                           can also be "off" to mean "0,0,0" or "on" to
+                           mean "5,300,20".
+  --list                   List available modes
+  --multiinsert N          In "insert" mode, put multiple rows on a single
+                           INSERT statement until the size exceeds N bytes.
+  --null STRING            Render SQL NULL values as the given string
+  --once                   Setting changes to the right are reverted after
+                           the next SQL command.
+  --quote ARG              Enable/disable quoting of text. ARG can be
+                           "off", "on", "sql", "relaxed", "csv", "html",
+                           "tcl", or "json". "off" means show the text as-is.
+                           "on" is an alias for "sql".
+  --reset                  Changes all mode settings back to their default.
+  --rowsep STRING          Use STRING as the row separator
+  --sw|--screenwidth N     Declare the screen width of the output device
+                           to be N characters.  An attempt may be made to
+                           wrap output text to fit within this limit. Zero
+                           means "no limit".  Or N can be "auto" to set the
+                           width automatically.
+  --tablename NAME         Set the name of the table for "insert" mode.
+  --tag NAME               Save mode to the left as NAME.
+  --textjsonb BOOLEAN      If enabled, JSONB text is displayed as text JSON.
+  --title ARG              Whether or not to show column headers, and if so
+                           how to encode them.  ARG can be "off", "on",
+                           "sql", "csv", "html", "tcl", or "json".
+  --titlelimit N           Limit the length of column titles to N characters.
+  -v|--verbose             Verbose output
+  --widths LIST            Set the columns widths for columnar modes. The
+                           argument is a list of integers, one for each
+                           column. A "0" width means use a dynamic width
+                           based on the actual width of data. If there are
+                           fewer entries in LIST than columns, "0" is used
+                           for the unspecified widths.
+  --wordwrap BOOLEAN       Enable/disable word wrapping
+  --wrap N                 Wrap columns wider than N characters
+  --ww                     Shorthand for "--wordwrap on"

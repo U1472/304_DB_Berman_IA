@@ -1,0 +1,2 @@
+min_user_id = 1, count = 232
+max_user_id = 120, count = 22
